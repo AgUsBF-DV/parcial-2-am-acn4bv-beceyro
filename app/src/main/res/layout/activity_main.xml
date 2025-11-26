@@ -30,8 +30,8 @@
             android:id="@+id/home_content"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginTop="@dimen/main_margin"
+            android:layout_marginBottom="@dimen/main_margin">
 
             <TextView
                 android:id="@+id/saludo"
@@ -48,7 +48,9 @@
             android:id="@+id/btn_catalogo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="@dimen/main_btn_margin"
+            android:layout_marginStart="@dimen/main_btn_margin"
+            android:layout_marginEnd="@dimen/main_btn_margin"
             android:backgroundTint="@color/emerald_800"
             android:text="@string/btn_catalogo"
             android:textSize="@dimen/text_medium"
@@ -58,6 +60,9 @@
             android:id="@+id/btn_carrito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/main_btn_margin"
+            android:layout_marginStart="@dimen/main_btn_margin"
+            android:layout_marginEnd="@dimen/main_btn_margin"
             android:backgroundTint="@color/emerald_800"
             android:text="@string/btn_carrito"
             android:textSize="@dimen/text_medium"

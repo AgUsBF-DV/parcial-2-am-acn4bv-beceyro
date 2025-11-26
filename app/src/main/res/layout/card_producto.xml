@@ -3,8 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_marginTop="@dimen/card_vertical_margin"
+    android:layout_marginBottom="@dimen/card_vertical_margin"
+    android:layout_marginStart="@dimen/card_horizontal_margin"
+    android:layout_marginEnd="@dimen/card_horizontal_margin"
+    app:cardCornerRadius="@dimen/card_radius"
+    app:cardElevation="@dimen/card_elevation">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,22 +26,31 @@
             android:id="@+id/nombre_producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_marginStart="@dimen/card_margin"
+            android:layout_marginEnd="@dimen/card_margin"
             android:text="Nombre del Producto"
             android:textSize="@dimen/text_medium"
+            android:textColor="@color/emerald_800"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/precio_producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="@dimen/card_margin"
+            android:layout_marginEnd="@dimen/card_margin"
             android:text="$0.00"
             android:textColor="@color/emerald_800"
-            android:textSize="@dimen/text_medium" />
+            android:textSize="@dimen/text_small"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_ver_mas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
             android:text="@string/ver_mas"
             android:backgroundTint="@color/emerald_800"
             android:textColor="@color/white" />

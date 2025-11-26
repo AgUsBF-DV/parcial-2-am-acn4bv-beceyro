@@ -14,10 +14,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="32dp"
-        android:paddingBottom="8dp"
-        android:paddingStart="@dimen/main_padding"
-        android:paddingEnd="@dimen/main_padding"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -25,28 +25,31 @@
         <!-- HEADER -->
         <include layout="@layout/layout_base_header" />
 
-        <!-- CONTENIDO CATALOGO -->
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <!-- Título del catálogo -->
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".CatalogoActivity">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_margin"
+            android:layout_marginBottom="@dimen/main_margin"
+            android:text="@string/titulo_catalogo"
+            android:textSize="@dimen/text_large"
+            android:textColor="@color/emerald_800"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- CONTENIDO CATALOGO -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/main_padding"
+            android:paddingEnd="@dimen/main_padding">
 
             <LinearLayout
                 android:id="@+id/contenedor_catalogo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/titulo_catalogo"
-                    android:textSize="@dimen/text_large"
-                    android:textStyle="bold"
-                    android:gravity="center" />
-
-            </LinearLayout>
+                android:orientation="vertical" />
 
         </ScrollView>
 

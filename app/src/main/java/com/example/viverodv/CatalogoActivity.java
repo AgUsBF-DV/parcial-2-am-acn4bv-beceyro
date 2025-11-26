@@ -101,7 +101,7 @@ public class CatalogoActivity extends AppCompatActivity {
 
         Glide.with(this)
                 .load(producto.getUrlImagen())
-                .centerCrop()
+                .fitCenter()
                 .into(img);
 
         btnVerMas.setOnClickListener(new View.OnClickListener() {

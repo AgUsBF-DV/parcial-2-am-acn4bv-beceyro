@@ -44,7 +44,7 @@ public class DetalleProductoActivity extends AppCompatActivity {
 
             Glide.with(this)
                     .load(producto.getUrlImagen())
-                    .centerCrop()
+                    .fitCenter()
                     .into(img);
 
             btnAgregar.setOnClickListener(new View.OnClickListener() {

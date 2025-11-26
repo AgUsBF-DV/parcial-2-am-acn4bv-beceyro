@@ -6,6 +6,9 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 
+/**
+ * Activity principal / HOME de la aplicación.
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,9 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Referencias a los botones de navegación
         Button btnCatalogo = findViewById(R.id.btn_catalogo);
         Button btnCarrito = findViewById(R.id.btn_carrito);
 
+        // Botón para navegar al catálogo de productos
         btnCatalogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Botón para navegar al carrito de compras
         btnCarrito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

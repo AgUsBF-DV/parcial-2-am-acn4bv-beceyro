@@ -4,8 +4,12 @@ import com.example.viverodv.model.Producto;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Singleton que gestiona el carrito de compras de la aplicación.
+ */
 public class GestorCarrito {
 
+    // Instancia única del singleton
     private static final GestorCarrito instance = new GestorCarrito();
     private List<Producto> carrito;
 

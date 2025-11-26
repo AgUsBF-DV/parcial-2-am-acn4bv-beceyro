@@ -14,6 +14,9 @@ import com.example.viverodv.model.Producto;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Activity que muestra el catálogo.
+ */
 public class CatalogoActivity extends AppCompatActivity {
 
     private LinearLayout contenedor;
@@ -25,12 +28,17 @@ public class CatalogoActivity extends AppCompatActivity {
 
         contenedor = findViewById(R.id.contenedor_catalogo);
 
+        // Obtener catálogo y crear vistas para cada producto
         List<Producto> catalogo = getCatalogo();
         for (Producto producto : catalogo) {
             addProductView(producto);
         }
     }
 
+    /**
+     * Retorna la lista de productos del catálogo (Mock de BBDD).
+     * En una aplicación real, esto vendría de una base de datos o API.
+     */
     private List<Producto> getCatalogo() {
 
         List<Producto> catalogo = new ArrayList<>();
@@ -81,6 +89,7 @@ public class CatalogoActivity extends AppCompatActivity {
         return catalogo;
     }
 
+    // Completa la card de producto y la inserta en el contenedor.
     private void addProductView(final Producto producto) {
 
         View view = LayoutInflater.from(this).inflate(R.layout.card_producto, contenedor, false);
@@ -90,20 +99,20 @@ public class CatalogoActivity extends AppCompatActivity {
         TextView precio = view.findViewById(R.id.precio_producto);
         Button btnVerMas = view.findViewById(R.id.btn_ver_mas);
 
+        // Asignar datos del producto a la vista
         nombre.setText(producto.getNombre());
         precio.setText("$" + producto.getPrecio());
-
+        // Cargar imagen desde URL usando Glide
         Glide.with(this)
                 .load(producto.getUrlImagen())
                 .fitCenter()
                 .into(img);
-
+        // Boton para acceder al detalle del producto
         btnVerMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CatalogoActivity.this, DetalleProductoActivity.class);
                 intent.putExtra("producto", producto);
-                // intent.putExtra("producto_id", producto.getId());
                 startActivity(intent);
             }
         });

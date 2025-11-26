@@ -11,6 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.viverodv.model.Producto;
 import com.example.viverodv.utils.GestorCarrito;
 
+/**
+ * Activity que muestra los detalles completos de un producto.
+ * Permite agregar el producto al carrito de compras.
+ */
 public class DetalleProductoActivity extends AppCompatActivity {
 
     @Override
@@ -18,7 +22,8 @@ public class DetalleProductoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_producto);
 
-        // TODO : Revisar el medoto deprecado
+        // Obtener producto desde Intent
+        // TODO revisar el warning de deprecated, aunque funciona bien
         @SuppressWarnings("deprecation")
         Producto producto = (Producto) getIntent().getSerializableExtra("producto");
 
@@ -29,15 +34,16 @@ public class DetalleProductoActivity extends AppCompatActivity {
         Button btnAgregar = findViewById(R.id.btn_agregar);
 
         if (producto != null) {
+            // Mostrar información del producto
             nombre.setText(producto.getNombre());
             precio.setText("$" + producto.getPrecio());
             descripcion.setText(producto.getDescripcion());
-
+            // Cargar imagen desde URL
             Glide.with(this)
                     .load(producto.getUrlImagen())
                     .fitCenter()
                     .into(img);
-
+            // Botón para agregar al carrito
             btnAgregar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

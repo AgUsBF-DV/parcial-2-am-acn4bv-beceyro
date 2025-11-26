@@ -2,6 +2,10 @@ package com.example.viverodv.model;
 
 import java.io.Serializable;
 
+/**
+ * Modelo producto del vivero.
+ * Implementa Serializable para poder pasar instancias entre Activities via Intent.
+ */
 public class Producto implements Serializable {
 
     private String id;

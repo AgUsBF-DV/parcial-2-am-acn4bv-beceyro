@@ -13,6 +13,12 @@
     <string name="btn_catalogo">Ver Catálogo</string>
     <string name="btn_carrito">Ver Carrito</string>
 
+    <!-- Catalogo -->
+    <string name="titulo_catalogo">Catálogo de Plantas</string>
+    <string name="agregar_al_carrito">Agregar al carrito</string>
+    <string name="mje_agregado_ok">Producto agregado al carrito</string>
+    <string name="ver_mas">Ver más</string>
+
     <!-- Formulario -->
     <string name="placeholder_nombre">Nombre</string>
     <string name="placeholder_tipo">Tipo</string>

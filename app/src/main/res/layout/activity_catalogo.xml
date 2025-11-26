@@ -25,24 +25,30 @@
         <!-- HEADER -->
         <include layout="@layout/layout_base_header" />
 
-        <!-- CONTENIDO HOME -->
-        <FrameLayout
-            android:id="@+id/home_content"
+        <!-- CONTENIDO CATALOGO -->
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp">
+            android:layout_height="match_parent"
+            tools:context=".CatalogoActivity">
 
-            <TextView
-                android:id="@+id/saludo"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/contenedor_catalogo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="CATÁLOGO DE PRODUCTOS"
-                android:textColor="@color/emerald_800"
-                android:textSize="@dimen/text_large"
-                android:textStyle="bold" />
-        </FrameLayout>
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/titulo_catalogo"
+                    android:textSize="@dimen/text_large"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

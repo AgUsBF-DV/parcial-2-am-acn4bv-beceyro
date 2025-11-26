@@ -104,6 +104,16 @@ public class CatalogoActivity extends AppCompatActivity {
                 .centerCrop()
                 .into(img);
 
+        btnVerMas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CatalogoActivity.this, DetalleProductoActivity.class);
+                intent.putExtra("producto", producto);
+                // intent.putExtra("producto_id", producto.getId());
+                startActivity(intent);
+            }
+        });
+
         contenedor.addView(view);
     }
 }

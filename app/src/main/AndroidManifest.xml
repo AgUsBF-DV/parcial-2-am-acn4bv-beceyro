@@ -21,6 +21,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CatalogoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ViveroDV" />
+        <activity
+            android:name=".CarritoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ViveroDV" />
     </application>
 
 </manifest>

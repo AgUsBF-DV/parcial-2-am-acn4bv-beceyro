@@ -3,7 +3,7 @@
     <style name="Base.Theme.ViveroDV" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        
+
         <!-- Barras superior/inferior del sistema -->
         <item name="android:statusBarColor">@color/emerald_800</item>
         <item name="android:navigationBarColor">@color/emerald_800</item>

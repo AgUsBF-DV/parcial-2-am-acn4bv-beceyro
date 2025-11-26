@@ -39,7 +39,7 @@
                 android:layout_marginBottom="@dimen/main_margin"
                 android:paddingStart="@dimen/main_padding"
                 android:paddingEnd="@dimen/main_padding"
-                >
+            >
 
                 <ImageView
                     android:id="@+id/img"

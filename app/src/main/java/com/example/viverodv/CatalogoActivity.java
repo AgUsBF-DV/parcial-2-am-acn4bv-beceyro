@@ -1,20 +1,12 @@
 package com.example.viverodv;
 
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import com.bumptech.glide.Glide;
@@ -40,6 +32,7 @@ public class CatalogoActivity extends AppCompatActivity {
     }
 
     private List<Producto> getCatalogo() {
+
         List<Producto> catalogo = new ArrayList<>();
 
         catalogo.add(
@@ -89,6 +82,7 @@ public class CatalogoActivity extends AppCompatActivity {
     }
 
     private void addProductView(final Producto producto) {
+
         View view = LayoutInflater.from(this).inflate(R.layout.card_producto, contenedor, false);
 
         ImageView img = view.findViewById(R.id.img_producto);

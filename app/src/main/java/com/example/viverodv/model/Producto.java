@@ -3,6 +3,7 @@ package com.example.viverodv.model;
 import java.io.Serializable;
 
 public class Producto implements Serializable {
+
     private String id;
     private String nombre;
     private double precio;

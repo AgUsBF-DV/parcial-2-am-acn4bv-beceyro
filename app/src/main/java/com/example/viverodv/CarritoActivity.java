@@ -1,26 +1,18 @@
 package com.example.viverodv;
 
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import com.example.viverodv.model.Producto;
 import com.example.viverodv.utils.GestorCarrito;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CarritoActivity extends AppCompatActivity {
@@ -59,14 +51,14 @@ public class CarritoActivity extends AppCompatActivity {
     }
 
     private void actualizarCarrito() {
-        
+
         contenedor.removeAllViews();
 
         List<Producto> carrito = GestorCarrito.getInstance().getCarrito();
         double total = GestorCarrito.getInstance().getPrecioTotal();
 
         precioText.setText(getString(R.string.total) + " $" + total);
-        
+
         for (final Producto producto : carrito) {
             View view = LayoutInflater.from(this).inflate(R.layout.card_carrito, contenedor, false);
 

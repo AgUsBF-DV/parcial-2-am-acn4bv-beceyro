@@ -1,27 +1,38 @@
-# Informe: App de gestión interna para Vivero Da Vinci
-
-Este documento resume la propuesta del proyecto "Vivero Da Vinci" y describe las pantallas y funcionalidades principales para una aplicación de gestión de ventas e inventario. El trabajo actual incluye una muestra (formulario de alta de productos) como demostración.
+# Informe: Vivero Da Vinci - App de Ventas Online
 
 ## Resumen
 
-Vivero Da Vinci es una aplicación orientada a digitalizar las operaciones de venta y el control de stock de un vivero. El prototipo actual implementa un formulario de alta de producto. Esta pantalla es la única desarrollada, cumpliendo con el requerimiento de seleccionar solo una de las posibles vistas de la app. El objetivo futuro es extender las funcionalidades hacia inventario, clientes, reportes y gestión de usuarios.
+En el **Parcial 1** se presentó una propuesta de sistema de gestión interna para el vivero. Para el **Parcial 2**, se decidió cambiar el enfoque hacia un **sistema de ventas online** orientado al cliente final.
 
-## Descripción de la pantalla
+**Motivación:** El sistema de gestión interno propuesto originalmente era limitado al no tener una base de datos para implementación de *CRUDs*. Un sistema de ventas online permite:
 
-La pantalla permite al usuario ingresar información sobre nuevos productos para el vivero. Incluye:
+1. Implementar navegación entre múltiples activities con diferentes propósitos.
+2. Enviar objetos **Producto** entre pantallas usando *Intents* y *Serializable*
+3. Implementar un carrito de compras con patrón *Singleton*.
+4. Cargar imágenes desde URLs y generar vistas dinámicamente.
 
-- Un encabezado con el logo y el nombre del vivero.
-- Un subtítulo que indica la función de la pantalla.
-- Un formulario con campos para nombre, tipo y precio de la planta.
-- Un botón para agregar el producto.
-- Un área donde se muestran dinámicamente los productos agregados.
+## Objetivo
 
-El layout base de la pantalla es un `ConstraintLayout`, que permite posicionar el contenido principal de forma flexible y adaptable a diferentes tamaños de pantalla. Dentro de este, el contenido está organizado con `LinearLayout` vertical. Se utiliza:
+Desarrollar una aplicación Android para la venta de productos de vivero. La aplicación permite a los usuarios navegar por el catálogo de plantas, ver detalles de productos, agregar items al carrito de compras y gestionar sus compras.
 
-- Un `LinearLayout` vertical para organizar todos los elementos de la pantalla.
-- Un `LinearLayout` horizontal en el encabezado para alinear el logo y el nombre del vivero en una misma fila.
-- Un `LinearLayout` vertical para el área donde se agregan dinámicamente los productos (tarjetas).
+## Pantallas de la Aplicación
 
-Los campos de texto están implementados con `TextView` para el nombre del vivero, el título y las tarjetas de producto (estas creadas desde Java). Por otro lado, los campos del formulario son del tipo `EditText`, cada uno con su correspondiente `inputType` según el dato que le corresponde. En el caso particular del campo *Tipo*, al ser valores pre-definidos (en este caso *hardcodeados* por ser un mockup), se usa un campo tipo `AutoCompleteTextView`.
+La aplicación cuenta con las singuientes pantallasÑ
 
-El formulario también incluye un botón que permite al usuario agregar un nuevo producto a la lista. Esto ocurre mediante un `setOnClickListener` que valida el formulario y, si es correcto, agrega un nuevo producto a la lista.
+- **Pantalla de Inicio** (`MainActivity`): Es el punto de entrada de la aplicación. Direcciona el flujo a otras pantallas.
+- **Catálogo de Productos** (`CatalogoActivity`): Muestra la lista de productos disponibles con imágenes desde URLs. Al acceder a "Ver más" se accede a otro activity con el detalle de cada producto.
+- **Detalle del Producto** (`DetalleProductoActivity`): Muestra información completa del producto. Recibe el objeto `Producto` por Intent usando *Serializable*. Permite agregar el producto al carrito.
+- **Carrito de Compras** (`CarritoActivity`): Visualiza productos agregados usando el singleton `GestorCarrito`. Permite eliminar items individuales, vaciar el carrito completo y proceder al pago. Actualiza la vista dinámicamente.
+- **Sección de Pago** (`PagoActivity`): Mock para futura implementación del proceso de pago.
+
+## Implementación
+
+Entre otras cosas, se incorporó:
+
+- El patrón *Singleton* para la gestión del carrito de compras (`GestorCarrito`).
+- El modelo de `Producto` implementa `Serializable` para permitir el pasaje del objeto entre Activities.
+- Múltiples pantallas con navegación funcional por medio de `Intent`.
+- Comportamiento dinámico y reactivo usando contenido real como las imágenes cargadas desde *Unsplash*.
+- Uso de `ConstraintLayout`, `LinearLayout` (vertical/horizontal) y `ScrollView` según la funcionalidad requerida en cada caso.
+- Uso extensivo de `TextView`, `ImageView` y `Button` con eventos `onClick` en todos los elementos interactivos.
+- Recursos organizados apropiadamente (`Model`, `Utils`, `res/layout`, parámetros en la carpeta `res/values`).
